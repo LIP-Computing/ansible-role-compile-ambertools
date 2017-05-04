@@ -12,6 +12,7 @@ mkdir ambertar
 export MDIR=`pwd`/ambertar
 docker run -it -v /home:$MDIR -w /home lipcomputing/ansible-ubuntu16.04 /bin/bash
 ansible-galaxy install git+https://github.com/LIP-Computing/ansible-role-compile-ambertools.git
+ansible-playbook /etc/ansible/roles/ansible-role-compile-ambertools/tests/ambertools.yml
 export AMBERHOME=/home/amber16
 cd $AMBERHOME
 ./configure -mpi -noX11 gnu
