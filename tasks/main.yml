@@ -44,15 +44,15 @@
 - name: unarchive ambertools from {{ ambertools_url }}
   unarchive: src={{ ambertools_url }} dest=/home owner=root group=root copy=no creates=/home/{{ amber_home }}
 
-- name: remove test and examples directories
-  file: path={{ item }} state=absent
-  with_items:
-    - /home/{{ amber_home }}/test
-    - /home/{{ amber_home }}/AmberTools/examples
-    - /home/{{ amber_home }}/AmberTools/test
-    - /home/{{ amber_home }}/AmberTools/src/cpptraj/test
+#- name: remove test and examples directories
+#  file: path={{ item }} state=absent
+#  with_items:
+#    - /home/{{ amber_home }}/test
+#    - /home/{{ amber_home }}/AmberTools/examples
+#    - /home/{{ amber_home }}/AmberTools/test
+#    - /home/{{ amber_home }}/AmberTools/src/cpptraj/test
 
-- name: compile ambertools
-  command: ./configure -mpi -noX11 gnu && make install chdir=/home/{{ amber_home }}
-  environment:
-    AMBERHOME: /home/{{ amber_home }}
+#- name: compile ambertools
+#  command: ./configure -mpi -noX11 gnu && make install chdir=/home/{{ amber_home }}
+#  environment:
+#    AMBERHOME: /home/{{ amber_home }}
