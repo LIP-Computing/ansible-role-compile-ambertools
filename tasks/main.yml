@@ -1,0 +1,45 @@
+---
+- name: Install necessary packages
+  apt: name={{ item }} state=latest update_cache=yes cache_valid_time=3600
+  with_items:
+    - build-essential
+    - cmake
+    - csh
+    - flex
+    - g++
+    - gfortran
+    - gcc
+    - git
+    - libbz2-1.0
+    - libfreetype6
+    - liblapack3
+    - liblapacke
+    - libatlas-cpp-0.6-2
+    - libatlas3-base
+    - liblapack-pic
+    - libopenmpi1.10
+    - openmpi-bin
+    - openmpi-common
+    - patch
+    - pdb2pqr
+    - python-matplotlib
+    - python
+    - python-pip
+    - python-tk
+    - software-properties-common
+    - tar
+    - time
+    - wget
+
+- name: pip install python modules
+  pip: name={{ item }} state=latest
+  with_items:
+    - pip
+    - Cython
+    - mako
+    - numpy
+    - scipy
+    - virtualenv
+
+- name: unarchive ambertools
+  unarchive: src={{ ambertools_url }} dest=/usr/local owner=root group=root copy=no creates={{ amber_home }}
