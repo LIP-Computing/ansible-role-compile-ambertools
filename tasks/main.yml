@@ -55,4 +55,4 @@
 - name: compile ambertools
   command: ./configure -mpi -noX11 gnu && make install chdir=/home/{{ amber_home }}
   environment:
-    AMBERHOME: /usr/local/{{ amber_home }}
+    AMBERHOME: /home/{{ amber_home }}
