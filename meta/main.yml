@@ -1,8 +1,8 @@
 galaxy_info:
   author: mariojmdavid@gmail.com
-  description: Ambertools applications
+  description: Compile Ambertools and produce a binary tarball
   company: LIP and INDIGO-DataCloud
-  license: Apache
+  license: GNUGPL v3
   min_ansible_version: 2.1
   platforms:
   - name: Ubuntu
