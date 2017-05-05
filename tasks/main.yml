@@ -49,7 +49,7 @@
     - virtualenv
 
 - name: unarchive ambertools from {{ ambertools_url }}
-  unarchive: src={{ ambertools_url }} dest=/home owner=root group=root copy=no creates=/home/{{ amber_home }}
+  unarchive: src={{ ambertools_url }} dest=/usr/local owner=root group=root copy=no creates={{ amber_home }}
 
 #- name: remove test and examples directories
 #  file: path={{ item }} state=absent

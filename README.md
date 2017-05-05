@@ -13,14 +13,19 @@ export MDIR=`pwd`/ambertar
 docker run -it -v /home:$MDIR -w /home lipcomputing/ansible-ubuntu16.04 /bin/bash
 ansible-galaxy install git+https://github.com/LIP-Computing/ansible-role-compile-ambertools.git
 ansible-playbook /etc/ansible/roles/ansible-role-compile-ambertools/tests/ambertools.yml
-export AMBERHOME=/home/amber16
-cd /home/amber16
+mv amber16 /usr/local/
+export AMBERHOME=/usr/local/amber16
+cd $AMBERHOME
+./configure --with-python /usr/bin/python -noX11 gnu
+make install
 ./configure --with-python /usr/bin/python -mpi -noX11 gnu
 make install
 rm -rf config.h configure logs src test
 mv AmberTools /home/
-mv dat /home/AmberTools/ 
+mv dat /home/AmberTools/
 cd ../
+mv amber16 /home/
+cd /home
 tar zcvf amber17-bin-ubuntu16.04.tgz amber16
 tar zcvf amber17-examples-ubuntu16.04.tgz AmberTools
 ```
