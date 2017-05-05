@@ -26,6 +26,7 @@ mv dat /home/AmberTools/
 cd ../
 mv amber16 /home/
 cd /home
-tar zcvf amber17-bin-ubuntu16.04.tgz amber16
+tar zcvf amber17-bin-nompi-ubuntu16.04.tgz amber16-nompi
+tar zcvf amber17-bin-mpi-ubuntu16.04.tgz amber16-mpi
 tar zcvf amber17-examples-ubuntu16.04.tgz AmberTools
 ```
