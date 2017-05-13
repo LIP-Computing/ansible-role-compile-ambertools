@@ -1,4 +1,5 @@
 ---
 # tarball striped from test directory
 ambertools_url: http://www.lip.pt/~david/ambertools/AmberTools17.tar.bz2
-amber_home: "amber16"
+root_dir: "/usr/local"
+amber_home: "{{ oot_dir }}/amber16"
