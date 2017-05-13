@@ -54,7 +54,7 @@
 - name: compile ambertools no mpi
   command: ./configure --with-python /usr/bin/python -noX11 gnu && make install chdir={{ amber_home }}
   environment:
-    AMBERHOME: {{ amber_home }}
+    AMBERHOME: "{{ amber_home }}"
 
 #- name: compile ambertools mpi
 #  command: ./configure --with-python /usr/bin/python -mpi -noX11 gnu && make install chdir={{ amber_home }}
